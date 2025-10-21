@@ -1,0 +1,291 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: rgb(24, 23, 33);
+    color: rgb(239, 238, 242);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* App Container */
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Music Player Card */
+.music-player {
+    width: 320px;
+    background-color: rgb(37, 35, 50);
+    border-radius: 32px;
+    padding: 24px;
+    box-shadow: 0 25px 50px -12px rgba(159, 140, 224, 0.2);
+    border: 1px solid rgba(58, 55, 76, 0.5);
+}
+
+/* Album Cover Section */
+.album-cover-container {
+    margin-bottom: 24px;
+}
+
+.album-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 24px;
+    background: linear-gradient(135deg, 
+        rgba(159, 140, 224, 0.2) 0%, 
+        rgba(145, 131, 208, 0.2) 50%, 
+        rgba(159, 140, 224, 0.3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#album-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.album-cover-blur {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.album-circle-outer {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: rgba(159, 140, 224, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-circle-inner {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(159, 140, 224, 0.4);
+}
+
+/* Song Info */
+.song-info {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.song-info h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(239, 238, 242, 0.9);
+    margin-bottom: 4px;
+}
+
+.song-info p {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(130, 125, 153);
+}
+
+/* Progress Section */
+.progress-section {
+    margin-bottom: 16px;
+}
+
+.slider-container {
+    margin-bottom: 8px;
+}
+
+.time-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgb(130, 125, 153);
+}
+
+/* Slider Styles */
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 999px;
+    background: rgb(58, 55, 76);
+    outline: none;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(159, 140, 224);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(159, 140, 224);
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.slider::-moz-range-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Progress slider with filled track */
+#progress-slider {
+    background: linear-gradient(to right, rgb(159, 140, 224) 0%, rgb(159, 140, 224) 0%, rgb(58, 55, 76) 0%, rgb(58, 55, 76) 100%);
+}
+
+#volume-slider {
+    background: linear-gradient(to right, rgb(159, 140, 224) 0%, rgb(159, 140, 224) 70%, rgb(58, 55, 76) 70%, rgb(58, 55, 76) 100%);
+}
+
+/* Control Buttons */
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.control-btn {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background: none;
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.btn-outline {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(159, 140, 224, 0.3);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: rgba(159, 140, 224, 0.1);
+    border-color: rgba(159, 140, 224, 0.5);
+}
+
+.btn-outline .icon {
+    color: rgb(159, 140, 224);
+}
+
+.btn-play {
+    width: 64px;
+    height: 64px;
+    background-color: rgb(159, 140, 224);
+    box-shadow: 0 10px 15px -3px rgba(159, 140, 224, 0.2);
+}
+
+.btn-play:hover {
+    background-color: rgba(159, 140, 224, 0.9);
+}
+
+.btn-play .icon {
+    color: rgb(24, 23, 33);
+    margin-left: 2px;
+}
+
+.btn-stop {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(224, 140, 127, 0.3);
+    background-color: transparent;
+}
+
+.btn-stop:hover {
+    background-color: rgba(224, 140, 127, 0.1);
+    border-color: rgba(224, 140, 127, 0.5);
+}
+
+.btn-stop .icon {
+    color: rgb(224, 140, 127);
+}
+
+/* Volume Control */
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 8px;
+}
+
+.icon-volume {
+    color: rgb(130, 125, 153);
+    flex-shrink: 0;
+}
+
+.slider-volume-container {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+#volume-text {
+    font-size: 12px;
+    color: rgb(130, 125, 153);
+    width: 32px;
+    text-align: right;
+}
+
+/* Icon Styles */
+.icon {
+    stroke: currentColor;
+}
+
+.icon-play {
+    margin-left: 4px;
+}
+
+/* Disabled state */
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.control-btn:disabled:hover {
+    background-color: transparent;
+}

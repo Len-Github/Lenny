@@ -1,0 +1,24 @@
+{
+  "name": "music-player-electron",
+  "version": "1.0.0",
+  "description": "A minimalistic purple-themed music player",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging"
+  },
+  "keywords": [
+    "electron",
+    "music",
+    "player",
+    "audio"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0"
+  },
+  "dependencies": {
+    "music-metadata": "^8.1.4"
+  }
+}

@@ -1,0 +1,11 @@
+const { contextBridge, ipcRenderer } = require('electron');
+
+// Expose protected methods that allow the renderer process to use
+// the ipcRenderer without exposing the entire object
+contextBridge.exposeInMainWorld(
+    'electron',
+    {
+        openFileDialog: () => ipcRenderer.invoke('open-file-dialog'),
+        getMetadata: (filePath) => ipcRenderer.invoke('get-metadata', filePath)
+    }
+);
