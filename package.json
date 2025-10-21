@@ -28,31 +28,57 @@
   },
   "build": {
     "appId": "com.example.lenny-music-player",
-    "productName": "Lenny Music Player",
+    "productName": "LennyPlayer",
+    "compression": "maximum",
     "directories": {
       "output": "dist"
     },
     "files": [
-      "**/*",
-      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "main.js",
+      "preload.js",
+      "index.html",
+      "script.js",
+      "styles.css",
+      "assets/icon.ico",
+      "node_modules/music-metadata/**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme,LICENSE}",
       "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
       "!**/node_modules/*.d.ts",
       "!**/node_modules/.bin",
+      "!**/node_modules/**/*.map",
       "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
       "!.editorconfig",
       "!**/._*",
       "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
       "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
       "!**/{appveyor.yml,.travis.yml,circle.yml}",
-      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}",
+      "!README.md",
+      "!icon-base64.txt",
+      "!icon.ico",
+      "!Lenny.rar"
     ],
+    "extraMetadata": {
+      "main": "main.js"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "LennyPlayer"
+    },
     "win": {
-      "target": "nsis",
-      "icon": "assets/icon.ico"
+      "target": {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      "icon": "assets/icon.ico",
+      "requestedExecutionLevel": "asInvoker"
     },
     "mac": {
       "target": "dmg",
-      "icon": "assets/icon.icns"
+      "icon": "assets/icon.png"
     },
     "linux": {
       "target": "AppImage",

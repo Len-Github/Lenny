@@ -43,3 +43,7 @@ packages/
 # Temporary files
 *.tmp
 *.temp
+
+# Project specific
+Lenny.rar
+Lenny/
