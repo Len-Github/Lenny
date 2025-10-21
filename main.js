@@ -2,21 +2,24 @@ const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const fs = require('fs').promises;
 
+
 let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
-        backgroundColor: '#181721',
+        width: 400,
+        height: 800,
+        backgroundColor: '#00000000',
+        transparent: true,
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
             preload: path.join(__dirname, 'preload.js')
         },
         resizable: true,
-        frame: true,
-        titleBarStyle: 'default'
+        frame: false,
+        titleBarStyle: 'hidden',
+        alwaysOnTop: false
     });
 
     mainWindow.loadFile('index.html');
@@ -55,6 +58,14 @@ ipcMain.handle('open-file-dialog', async () => {
         return result.filePaths[0];
     }
     return null;
+});
+
+ipcMain.on('window-minimize', () => {
+    mainWindow.minimize();
+});
+
+ipcMain.on('window-close', () => {
+    mainWindow.close();
 });
 
 // Handle metadata extraction

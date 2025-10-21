@@ -223,3 +223,16 @@ volumeSlider.addEventListener('input', (e) => {
 audioPlayer.volume = 0.7;
 updateVolumeSliderFill(70);
 updateProgressSliderFill(0);
+
+// Window control buttons
+document.getElementById('minimize-btn').addEventListener('click', () => {
+    if (window.electronAPI) {
+        window.electronAPI.minimize();
+    }
+});
+
+document.getElementById('close-btn').addEventListener('click', () => {
+    if (window.electronAPI) {
+        window.electronAPI.close();
+    }
+});

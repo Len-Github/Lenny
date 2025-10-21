@@ -9,3 +9,8 @@ contextBridge.exposeInMainWorld(
         getMetadata: (filePath) => ipcRenderer.invoke('get-metadata', filePath)
     }
 );
+
+contextBridge.exposeInMainWorld('electronAPI', {
+    minimize: () => ipcRenderer.send('window-minimize'),
+    close: () => ipcRenderer.send('window-close')
+});

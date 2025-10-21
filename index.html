@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
+    <title>Lenny</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app-container">
         <div class="music-player">
+            <!-- Invisible Drag Area -->
+            <div class="drag-area"></div>
+            
+            <!-- Window Controls -->
+            <div class="window-controls">
+                <button id="minimize-btn">_</button>
+                <button id="close-btn">×</button>
+            </div>
+            
             <!-- Album Cover -->
             <div class="album-cover-container">
                 <div class="album-cover" id="album-cover">
