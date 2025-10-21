@@ -13,7 +13,7 @@ A beautiful, minimalistic music player with a purple dark theme built with Elect
 - 💿 Automatic album cover extraction from audio files
 - 🎼 Displays song title and artist from metadata
 
-## Setup Instructions
+## Setup Instructions (For Contributions) (If you want to download, just go to the release page)
 
 ### 1. Install Node.js
 Make sure you have Node.js installed on your computer. Download it from [nodejs.org](https://nodejs.org/)
