@@ -1,11 +1,11 @@
 # Music Player - Electron App
 
-A beautiful, minimalistic music player with a purple dark theme built with Electron, HTML, CSS, and JavaScript.
+A silly, minimalistic music player with a purple dark theme built with Electron, HTML, CSS, and JavaScript.
 
 ## Features
 
 - 🎵 Play local audio files (MP3, WAV, OGG, FLAC, M4A, AAC)
-- 🎨 Beautiful purple gradient design
+- 🎨 Aesthetic purple gradient design
 - 🌙 Dark mode interface
 - 🔊 Volume control
 - ⏯️ Play/Pause/Stop controls
